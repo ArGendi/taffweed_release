@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'dart:math';
 
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -51,12 +51,12 @@ void main() async {
   await Cache.init();
   await LocalNotificationServices.init();
   Stripe.publishableKey = ApiKeys.publishableKey;
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-  FirebaseNotificationServices.init();
-  print("Firebase token ${await FirebaseNotificationServices.getToken()}");
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
+  //FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  //FirebaseNotificationServices.init();
+  //print("Firebase token ${await FirebaseNotificationServices.getToken()}");
   print(Cache.getToken());
   runApp(MultiBlocProvider(
     providers: [
@@ -121,21 +121,21 @@ class MyApp extends StatelessWidget {
   }
 }
 
-@pragma("vn:entry-point")
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  // If you're going to use other Firebase services in the background, such as Firestore,
-  // make sure you call `initializeApp` before using other Firebase services.
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+// @pragma("vn:entry-point")
+// Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+//   // If you're going to use other Firebase services in the background, such as Firestore,
+//   // make sure you call `initializeApp` before using other Firebase services.
+//   await Firebase.initializeApp(
+//     options: DefaultFirebaseOptions.currentPlatform,
+//   );
 
-  print("Handling a background message: ${message.messageId}");
-  // if(message.notification != null){
-  //   LocalNotificationServices.showNotification(
-  //     Random().nextInt(10000), 
-  //     message.notification!.title.toString(), 
-  //     message.notification!.body.toString(),
-  //   );
-  // }
+//   print("Handling a background message: ${message.messageId}");
+//   // if(message.notification != null){
+//   //   LocalNotificationServices.showNotification(
+//   //     Random().nextInt(10000), 
+//   //     message.notification!.title.toString(), 
+//   //     message.notification!.body.toString(),
+//   //   );
+//   // }
   
-}
+// }

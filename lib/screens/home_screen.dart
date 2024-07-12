@@ -182,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
     });
 
     BlocProvider.of<RequestsCubit>(context).getRequests();
-    NotificationServices().sendToken();
+    // NotificationServices().sendToken();
   }
 
   @override
