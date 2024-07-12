@@ -50,10 +50,19 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
             children: [
               Text(
                 AppLocalizations.of(context)!
-                    .enter_personal_data_of_the_person_for_whom_umrah_will_be_completed,
+                    .enter_person_details + " (" + widget.package.getName(lang) + ") " + 
+                    AppLocalizations.of(context)!.about_him,
+                    textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold
                 ),
+              ),
+              if(widget.package.enDescription != null)
+              Text(
+                widget.package.getDescription(lang),
+                textAlign: TextAlign.center,
+                style: TextStyle(),
               ),
               const SizedBox(
                 height: 20,

@@ -100,15 +100,18 @@ class AuthServices extends DioServices{
     }
   }
 
-  Future<Response?> deleteAccount(String token) async{
+  Future<Response?> deleteAccount() async{
     try{
-      var response = await dio.get(
+      var response = await dio.post(
         deleteAccountEndPoint,  
         options: Options(
           headers: {
-            "authtoken": token,
+            "Authorization": "Bearer ${Cache.getToken()}",
           }
         ),
+        data: {
+          "user_id": Cache.getUserId()
+        }
       );
       if(response.statusCode! >= 200 && response.statusCode! < 300){
         return response;

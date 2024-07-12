@@ -59,7 +59,7 @@ class ProfileCubit extends Cubit<ProfileState> {
       ),
       onPressed: ()  async{
         emit(LoadingState());
-        var response = await AuthServices().deleteAccount(Cache.getToken()!);
+        var response = await AuthServices().deleteAccount();
         if(response != null){
           emit(SuccessState());
           Cache.clear().then((value){
@@ -68,7 +68,7 @@ class ProfileCubit extends Cubit<ProfileState> {
         }
         else{
           emit(FailState());
-          ScaffoldMessenger.of(context).showSnackBar(customSnackBar(AppLocalizations.of(context)!.retry_again, Colors.green));
+          ScaffoldMessenger.of(context).showSnackBar(customSnackBar(AppLocalizations.of(context)!.retry_again, Colors.red));
         }
       },
     );

@@ -156,5 +156,9 @@
 "share": "Paylaş",
 "type": "Tür",
 "request_number": "İstek numarası",
+"enter_person_details": "Kişinin bilgilerini girin",
+"about_him": "onun hakkında",
+"contact_us": "Bizimle iletişime geçin",
+"contact_us_now": "Şimdi bizimle iletişime geçin ve size en kısa sürede yanıt verilecektir",
 "paid": "ödenmiş"
 }

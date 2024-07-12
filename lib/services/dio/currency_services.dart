@@ -6,6 +6,7 @@ class CurrencyServices{
 
   Future<double?> get(String to) async{
     try{
+      if(to == "SAR") return 1;
       var response = await Dio().post("https://api.fastforex.io/fetch-one?from=SAR&to=$to&api_key=$apiKey");
       if(response.statusCode! >=200 && response.statusCode! < 300){
         return response.data['result'][to];

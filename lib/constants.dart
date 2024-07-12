@@ -47,7 +47,7 @@ const String myRequestEndPoint = "user-requests";
 const String requestDetailsEndPoint = "user-request-detail";
 const String videosEndPoint = "user-request-videos";
 const String resetPasswordEndPoint = "password-forget";
-const String deleteAccountEndPoint = "api/deleteaccount";
+const String deleteAccountEndPoint = "delete-user";
 const String promoCodeEndPoint = "api/checkcopoun";
 
 // packages prices in Saudi Real

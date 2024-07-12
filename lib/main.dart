@@ -109,7 +109,7 @@ class MyApp extends StatelessWidget {
               fontFamily: 'times new roman',
               primaryColor: mainColor),
             onGenerateRoute: Routes.getRoute,
-            //home: FatoraahScreen(),
+            //home: LoginScreen(),
             locale:
                 Locale(langCubit.lang), //BlocProvider.of<LanguageCubit>(context).lang
             supportedLocales: AppLocalizations.supportedLocales,

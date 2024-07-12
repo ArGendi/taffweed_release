@@ -162,5 +162,9 @@
 "share": "Share the app",
 "type": "Type",
 "request_number": "Request number",
+"enter_person_details": "Enter person details",
+"about_him": "About him",
+"contact_us": "Contact us",
+"contact_us_now": "Contact us now and will respone as soon as possible",
 "paid": "Paid"
 }

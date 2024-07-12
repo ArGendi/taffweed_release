@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tafweed/constants.dart';
 import 'package:tafweed/cubits/requests/requests_cubit.dart';
+import 'package:tafweed/screens/home_bodies/judgments_body.dart';
 import 'package:tafweed/screens/home_bodies/notifications_body.dart';
 import 'package:tafweed/screens/home_bodies/packages_body.dart';
 import 'package:tafweed/screens/home_bodies/requests_body.dart';
@@ -26,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
   List<Widget> bodies = [
     const PackagesBody(),
     const RequestsBody(),
-    Container(),
+    const JudgmentsBody(),
     const NotificationsBody(),
     const SettingsBody(),
   ];
@@ -159,6 +160,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
     switch(currentPage){
       case 0: return Image.asset("assets/images/side_logo.png", width: 100);//Text(AppLocalizations.of(context)!.choose_whats_best_for_you);
       case 1: return Text(AppLocalizations.of(context)!.requests);
+      case 2: return Text(AppLocalizations.of(context)!.judgments);
       case 3: return Text(AppLocalizations.of(context)!.notifications);
       case 4: return Text(AppLocalizations.of(context)!.settings);
       default: return Container();

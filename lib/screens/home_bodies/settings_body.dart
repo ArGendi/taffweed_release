@@ -3,6 +3,7 @@
 import 'package:currency_picker/currency_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:tafweed/constants.dart';
 import 'package:tafweed/cubits/dial/dial_cubit.dart';
@@ -16,6 +17,7 @@ import 'package:tafweed/widgets/settings_card.dart';
 import "package:tafweed/models/currency.dart" as myCurrency;
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class SettingsBody extends StatefulWidget {
   const SettingsBody({super.key});
@@ -143,20 +145,29 @@ class _SettingsBodyState extends State<SettingsBody> {
           ),
           SizedBox(height: 10),
           SettingsCard(
-            leading: Icon(Icons.share),
-            title: AppLocalizations.of(context)!.share,
+            leading: FaIcon(FontAwesomeIcons.whatsapp),
+            title: AppLocalizations.of(context)!.contact_us,
+            subTitle: AppLocalizations.of(context)!.contact_us_now,
             onTap: () {
-              //Share.share("", subject: "Download app now to reserve Umrah");
+              launchUrlString("https://wa.me/+971585336960/");
             },
           ),
-          SizedBox(height: 10),
-          SettingsCard(
-            leading: Icon(Icons.star_rate_rounded),
-            title: AppLocalizations.of(context)!.rate,
-            onTap: () {
-              //Share.share("", subject: "Download app now to reserve Umrah");
-            },
-          ),
+          // SizedBox(height: 10),
+          // SettingsCard(
+          //   leading: Icon(Icons.share),
+          //   title: AppLocalizations.of(context)!.share,
+          //   onTap: () {
+          //     //Share.share("", subject: "Download app now to reserve Umrah");
+          //   },
+          // ),
+          // SizedBox(height: 10),
+          // SettingsCard(
+          //   leading: Icon(Icons.star_rate_rounded),
+          //   title: AppLocalizations.of(context)!.rate,
+          //   onTap: () {
+          //     //Share.share("", subject: "Download app now to reserve Umrah");
+          //   },
+          // ),
           SizedBox(height: 10),
           BlocBuilder<SettingsCubit, SettingsState>(
             builder: (context, state) {
